@@ -197,23 +197,6 @@ let dep = ['Ain',
 'France'];
 
 
-function prepareSchema(request) {
-  // Prepare the schema for the fields requested.
-  var dataSchema = [];
-  var fixedSchema = getSchema().schema;
-  request.fields.forEach(function(field) {
-    for (var i = 0; i < fixedSchema.length; i++) {
-      if (fixedSchema[i].name == field.name) {
-        dataSchema.push(fixedSchema[i]);
-        break;
-      }
-    }
-  });
-  console.log('prepare schema');
-  return dataSchema;
-}
-
-
 //Récupération des données historiques
 
  async function load_data () {
@@ -372,13 +355,6 @@ Date.prototype.yyyymmdd = function() {
          ].join('-');
 };
 
-function load_data_day() {
-  
-  
-  
-
-  console.log("https://coronavirusapi-france.now.sh/AllDataByDate?date="+ date);
-}
 
  async function load_data_yesterday () {
    console.log('load data yesterday');
